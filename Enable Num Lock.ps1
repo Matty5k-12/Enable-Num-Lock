@@ -16,8 +16,6 @@ else {
     $RequestedState = $false
 }
 
-# If the requested state is the current state, we declare
-# victory and go home
 if ($RequestedState -eq $CurrentState) {
     if ($CurrentState -eq $false) 
     {
@@ -35,10 +33,8 @@ else {
     else {
         Write-Host 'Num lock is on, turning off'
     }
-    # If the requested state is not the current state, then
-    # we need to do a Num Lock press
+   
 
-    # Create a new instance of the WScript object and send
-    # the NumLock key press to it
+   
     (New-Object –ComObject WScript.Shell).SendKeys('{NUMLOCK}')
 }
